@@ -1,0 +1,28 @@
+<h1>Alta de vivienda</h1>
+<div>
+    <form [formGroup]="alta" #frmVivienda="ngForm" (ngSubmit)="enviarFormulario()">
+        <div class="form-group">
+            <label for="idVivienda">Id_vivienda:</label>
+            <input type="number" id="idVivienda" formControlName="idVivienda" class="form-control" required placeholder="Introduce el id de la vivienda">
+        </div>
+        <div class="form-group">
+            <label for="gasNatural">¿Tiene Gas Natural?</label>
+            <input type="checkbox" id="gasNatural" formControlName="gasNatural" class="form-control" placeholder="Introduce el nº de la planta de la vivienda">
+        </div>
+        <div class="form-group">
+            <label for="nHabitaciones">Número de habitaciones:</label>
+            <input type="number" id="nHabitaciones" formControlName="nHabitaciones" class="form-control" required placeholder="Introduce el nº de habitaciones de la vivienda">
+        </div>
+        <div class="form-group">
+            <label for="piso">Piso:</label>
+            <input type="number" id="piso" formControlName="piso" class="form-control" required placeholder="Introduce el nº de la planta de la vivienda">
+        </div>
+        <div class="form-group">
+            <label for="tamano">Tamaño:</label>
+            <input type="number" id="tamano" formControlName="tamano" class="form-control" required placeholder="Introduce el tamaño de la vivienda en metros cuadrados">
+        </div>
+    
+        <button type="submit" class="btn btn-primary" [disabled]="frmVivienda.invalid">Enviar</button>
+        <button type="button" routerLink="" class="btn btn-primary" style="margin-right: 10px;">Cancelar</button>
+    </form>
+</div>

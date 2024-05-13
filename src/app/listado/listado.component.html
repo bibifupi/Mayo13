@@ -1,0 +1,31 @@
+<h1>Lista de Viviendas</h1>
+<table>
+    <tr>
+        <th>Id_Vivienda</th>
+        <th>Gas Natural</th>
+        <th>Número de Habitaciones</th>
+        <th>Tamaño</th>
+        <th>Piso</th>
+        <th></th>
+    </tr>
+    @for(elemento of viviendas;track elemento.idVivienda){
+    <tr>
+        <td>{{elemento.idVivienda}}</td>
+        <td>{{elemento.gasNatural}}</td>
+        <td>{{elemento.nHabitaciones}}</td>
+        <td>{{elemento.tamano}}</td>
+        <td>{{elemento.piso}}</td>
+        <td> <button class="btn btn-primary" style="margin-right: 10px;"
+                [routerLink]="['modificar',elemento.idVivienda]">
+                Modificar</button>
+            <button class="btn btn-primary" style="margin-right: 10px;" (click)="eliminar(elemento.idVivienda)">
+                Eliminar</button>
+        </td>
+    </tr>
+
+    }
+</table>
+<button class="btn btn-primary" style="margin-right: 10px;" routerLink="alta">
+    Alta de una nueva vivienda</button>
+
+<router-outlet></router-outlet>
